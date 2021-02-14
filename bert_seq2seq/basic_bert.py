@@ -7,7 +7,7 @@ from bert_seq2seq.tokenizer import load_chinese_base_vocab, Tokenizer
 class BasicBert(nn.Module):
     def __init__(self):
         super().__init__()
-        self.device = torch.device("cpu")
+        #self.device = torch.device("cpu")
 
     def load_pretrain_params(self, pretrain_model_path, keep_tokens=None):
         checkpoint = torch.load(pretrain_model_path)
@@ -34,7 +34,7 @@ class BasicBert(nn.Module):
         raise NotImplemented
 
     def set_device(self, device):
-        self.device = torch.device(device)
+        #self.device = torch.device(device)
         self.to(device)
         
     def save_all_params(self, save_path):
